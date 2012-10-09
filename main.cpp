@@ -27,28 +27,33 @@ cout <<"y= "<< rint2 << endl;
 cout <<"z= "<< rint3 << endl;
 
 //-----vektorius 1-----
-srand ( unsigned ( time (NULL) ) );
-  vector<int> myvector;
-  vector<int>::iterator it;
-  int a;
-  cout << "Iveskite vektorio ligy: ";
-  cin>>a; cout<<endl;
+    cout << "Monte Carlo realizacijos pradzia" << endl;
+    cout << "(RANDOM SEARCH METHOD)" << endl;
+    // Kintamuju apsirasymas
+    double f, x; // Funkcijos reiksmes ir argumentas x
+    int n; // Uzedavinio dimensija
+    double xSprendinys; // Argumento reiksme
+    int fSprendinys; // Uzdavinio sprendinys
 
-  // set some values:
-  for (int i=0; i<a; ++i) myvector.push_back(i); // 1 2 3 4 5 6 7 8 9
+    // Vektoriu kurimas, kuriu elementai yra atitiktiniai realus skaiciai
 
-  // using built-in random generator:
-  random_shuffle ( myvector.begin(), myvector.end() );
+    double virsutinis_rezis, apatinis_rezis; // apsirasome intervalo rezius
 
-  // using myrandom:
-  random_shuffle ( myvector.begin(), myvector.end(), p_myrandom);
+    cout << "Iveskite inervalo rerzius: ";
+    cin >> apatinis_rezis >> virsutinis_rezis;
+    cout <<endl;
+    cout << "Iveskite vektoriaus ilgy:";
+    cin >> n; cout<< endl;
 
-  // print out content:
-  cout << "myvector contains:";
-  for (it=myvector.begin(); it!=myvector.end(); ++it)
-    cout << " " << *it;
+    double vektorius[n];
 
-  cout << endl;
+    for(int i=0; i<n; i++)
+    {
+        vektorius[i] = rand() * (virsutinis_rezis - apatinis_rezis) / RAND_MAX + apatinis_rezis;
+        cout << i+1 << ". " << vektorius[i] << endl; // Vektoriaus isvedimas i ekrana
+    }
+
+    return 0;
 //-------------------------------
 
 
