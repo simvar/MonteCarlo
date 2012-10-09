@@ -10,7 +10,7 @@ int main()
     //Kintamuju apsirasimas
     double f,x; //Funkcijos f reksmes ir argumentas x
     int n; //uzdavinio dimencija
-
+int fSprend; //uzdavinio sprendinys
 
 
     return 0;
