@@ -12,6 +12,7 @@ int main()
     double f,x; //Funkcijos f reksmes ir argumentas x
     int n; //uzdavinio dimencija
     double xSprend; //Argumento
+int fSprend; //uzdavinio sprendinys
 
 
 
