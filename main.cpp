@@ -67,7 +67,7 @@ double min = skaiciai[0]; // prielaidos maþiausiam elementui ...
 double imin = 0; // ir jo vietai masyve
  double mi1= xx[0][0];
  double mi2= xx[0][1];
-for( int i = 1; i < 100; i++ ){ // ciklà dabar galima pradëti nuo antrojo elemento
+for( int i = 0; i < 100; i++ ){ // ciklà dabar galima pradëti nuo antrojo elemento
 if( skaiciai[i] > max ) {
 max = skaiciai[i];
 imax = i;
@@ -81,13 +81,22 @@ imin = i;
   mi2= xx[i][1];
 }
 }
+//--------------
+double vid, sum=0;
+for( int i = 0; i < 100; i++ ){
+    sum=sum+skaiciai[i];
+}
+vid=sum/100;
+//----------------
 // Rezultatø spausdinimas
 cout<<"\nRezultatai\n";
 cout<<"Didziausias elementas yra "<<max<<", jo vieta yra "<<imax+1<<" x["<<imax+1<<"][0]="<<ma1<<" x["<<imax+1<<"][1]="<<ma2<<endl;
 cout<<"Maziausias elementas yra "<<min<<", jo vieta yra "<<imin+1<<" x["<<imin+1<<"][0]="<<mi1<<" x["<<imin+1<<"][1]="<<mi2<<endl;
 //
+cout<<"100-to Six hump funkcijos reiksmiu vidurkis : "<<vid<<endl;
 //-----------------------------------------------
     //vektorius[0] = 0.089842; vektorius[1] = -0.7126546;
    // cout << "Six hump funkcijos reiksme minimumo taske: " << sixhump(&vektorius[0]) << endl;
+   system("pause");
     return 0;
 }
