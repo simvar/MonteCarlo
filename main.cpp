@@ -17,6 +17,7 @@ int main()
 {
 
 //---genereavimas
+/*
 srand((unsigned)time(0));
 int rint1, rint2, rint3;
 rint1 = (rand()%10)+1;
@@ -25,7 +26,7 @@ rint3 = (rand()%10)+1;
 cout <<"x= "<< rint1 << endl;
 cout <<"y= "<< rint2 << endl;
 cout <<"z= "<< rint3 << endl;
-
+*/
 //-----vektorius 1-----
     cout << "Monte Carlo realizacijos pradzia" << endl;
     cout << "(RANDOM SEARCH METHOD)" << endl;
@@ -42,17 +43,23 @@ cout <<"z= "<< rint3 << endl;
     cout << "Iveskite inervalo rerzius: ";
     cin >> apatinis_rezis >> virsutinis_rezis;
     cout <<endl;
-    cout << "Iveskite vektoriaus ilgy:";
+    cout << "Iveskite vektoriaus ilgy: ";
     cin >> n; cout<< endl;
 
     double vektorius[n];
+cout<<"x= { ";
+
 
     for(int i=0; i<n; i++)
     {
         vektorius[i] = rand() * (virsutinis_rezis - apatinis_rezis) / RAND_MAX + apatinis_rezis;
-        cout << i+1 << ". " << vektorius[i] << endl; // Vektoriaus isvedimas i ekrana
+      //  cout << i+1 << ". " << vektorius[i] << endl; // Vektoriaus isvedimas i ekrana
     }
-
+     for(int i=0; i<n; i++)
+    {
+cout  << vektorius[i] <<" "; // Vektoriaus isvedimas i ekrana
+    }
+    cout<<"}"<<endl;
     return 0;
 //-------------------------------
 

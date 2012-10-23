@@ -1,3 +1,5 @@
 *.depend
 bin/
 obj/
+*.exe
+*.o
