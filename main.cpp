@@ -4,6 +4,14 @@
 #include <vector>
 #include <ctime>
 #include <cstdlib>
+#include <cmath>
+
+double sixhump (double * x)
+{
+    double f=(4-2.1*x[0]*x[0]+pow(x[0],4.0)/3)*x[0]*x[0]+x[0]*x[1]+(-4+4*x[1])*x[1];
+    return f;
+}
+
 using namespace std;
 
 // random generator function:
@@ -16,17 +24,7 @@ ptrdiff_t (*p_myrandom)(ptrdiff_t) = myrandom;
 int main()
 {
 
-//---genereavimas
-/*
-srand((unsigned)time(0));
-int rint1, rint2, rint3;
-rint1 = (rand()%10)+1;
-rint2 = (rand()%10)+1;
-rint3 = (rand()%10)+1;
-cout <<"x= "<< rint1 << endl;
-cout <<"y= "<< rint2 << endl;
-cout <<"z= "<< rint3 << endl;
-*/
+
 //-----vektorius 1-----
     cout << "Monte Carlo realizacijos pradzia" << endl;
     cout << "(RANDOM SEARCH METHOD)" << endl;
@@ -53,13 +51,16 @@ cout<<"x= { ";
     for(int i=0; i<n; i++)
     {
         vektorius[i] = rand() * (virsutinis_rezis - apatinis_rezis) / RAND_MAX + apatinis_rezis;
-      //  cout << i+1 << ". " << vektorius[i] << endl; // Vektoriaus isvedimas i ekrana
     }
      for(int i=0; i<n; i++)
     {
 cout  << vektorius[i] <<" "; // Vektoriaus isvedimas i ekrana
     }
     cout<<"}"<<endl;
+    cout<<"Six hump funkcios reiksme siame taske "<<sixhump (&vektorius[0])<<endl;
+    vektorius[0]=0.089842;
+    vektorius[1]=-0.712656;
+    cout<<"Six hump funkcios reiksme siame taske "<<sixhump (&vektorius[0])<<endl;
     return 0;
 //-------------------------------
 
