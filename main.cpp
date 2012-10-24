@@ -105,6 +105,7 @@ cout<<"Didziausias elementas yra "<<max<<", jo vieta yra "<<imax+1<<" x["<<imax+
 cout<<"Maziausias elementas yra "<<min<<", jo vieta yra "<<imin+1<<" x["<<imin+1<<"][0]="<<mi1<<" x["<<imin+1<<"][1]="<<mi2<<endl;
 //
 cout<<"100-to Six hump funkcijos reiksmiu vidurkis : "<<vid<<endl;
+system("pause");
 //-----------------------------------------------
 //----Pajieska su salyga
     double *skaiciai2,*temp, *elm, *temp2;
@@ -131,7 +132,7 @@ while (abs(-1.031628453-min)>0.0001)
         vektorius[1] = rand() * (virsutinis_rezis2 - apatinis_rezis2) / RAND_MAX + apatinis_rezis2;
     skaiciai2[ii]=sixhump(&vektorius[0]);
 cout<<"Minimumas "<<min<<endl;
-//system("pause");
+
   //skaiciai2[ii]=skaiciai[ii]; /* put the character into the skaiciai array */
                 temp=(double*)realloc(skaiciai2,(ii+2)*sizeof(double)); /* give the pointer some memory */
                 if ( temp != NULL ) {
