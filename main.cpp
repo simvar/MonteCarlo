@@ -178,10 +178,21 @@ temp2=(double*)realloc(elm,(iii+2)*sizeof(double));
 */
 //-----------------------------
 cout<<"Maziausias elementas yra "<<min<<", jo vieta yra "<<imin+1<<" x["<<imin+1<<"][0]="<<mi1<<" x["<<imin+1<<"][1]="<<mi2<<endl;
+
+ int j=1;
+
+if(iii<6)
 for(int i=0;i<iii;i++)
 {
-    cout<<i<<"-as maziausias elementas :"<< elm[i]<<endl;
+    cout<<j<<"-as maziausias elementas :"<< elm[i]<<endl;
+    j++;
 }
+else for(int i=iii-1;i>iii-6;i--)
+{
+    cout<<j<<"-as maziausias elementas :"<< elm[i]<<endl;
+    j++;
+}
+
     //vektorius[0] = 0.089842; vektorius[1] = -0.7126546;
    // cout << "Six hump funkcijos reiksme minimumo taske: " << sixhump(&vektorius[0]) << endl;
    system("pause");
