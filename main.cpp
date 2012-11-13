@@ -11,6 +11,12 @@ double sixhump(double * x)
     return f;
 }
 
+double f_prime(double x_old,double x_new){
+        double f = (4-2.1*x_old*x_old+pow(x_old,4.0)/3)*x_old*x_old + x_old*x_new + (-4 + 4*x_new*x_new)*x_new*x_new;
+        f=-f;
+    return f;
+}
+
 using namespace std;
 int main()
 {
@@ -78,6 +84,7 @@ double min = skaiciai[0]; // prielaidos maþiausiam elementui ...
 double imin = 0; // ir jo vietai masyve
  double mi1= xx[0][0];
  double mi2= xx[0][1];
+ double precision = 0.00001;
 for( int i = 0; i < 100; i++ ){ // ciklà dabar galima pradëti nuo antrojo elemento
 if( skaiciai[i] > max ) {
 max = skaiciai[i];
@@ -124,14 +131,14 @@ system("pause");
 int ii=0, iii=0;
 
 
-while (abs(-1.031628453-min)>0.0001)
+while (abs(-1.031628453-min)>precision)
 {
                     n=2;
     double vektorius[n];
         vektorius[0] = rand() * (virsutinis_rezis1 - apatinis_rezis1) / RAND_MAX + apatinis_rezis1;
         vektorius[1] = rand() * (virsutinis_rezis2 - apatinis_rezis2) / RAND_MAX + apatinis_rezis2;
     skaiciai2[ii]=sixhump(&vektorius[0]);
-cout<<"Minimumas "<<min<<endl;
+//cout<<"Minimumas "<<min<<endl;
 
   //skaiciai2[ii]=skaiciai[ii]; /* put the character into the skaiciai array */
                 temp=(double*)realloc(skaiciai2,(ii+2)*sizeof(double)); /* give the pointer some memory */
@@ -195,6 +202,23 @@ else for(int i=iii-1;i>iii-6;i--)
 
     //vektorius[0] = 0.089842; vektorius[1] = -0.7126546;
    // cout << "Six hump funkcijos reiksme minimumo taske: " << sixhump(&vektorius[0]) << endl;
+
+   //-----------------------------------
+  double x_old = elm[0];
+double x_new = elm[1]; // The algorithm starts at x=6
+double eps = 0.01; // step size
+//double precision = 0.00001;
+
+
+
+while (abs(x_new - x_old) > precision){
+    x_old = x_new;
+    x_new = x_old - eps * f_prime(x_old,x_new);
+   // cout<<f_prime(x_old,x_new)<<endl;
+   // cout<<abs(x_new - x_old) <<" ? "<< precision<<endl;
+}
+cout<< "Local minimum occurs at "<< x_new<<endl;
+   //------------------------------------
    system("pause");
     return 0;
 }
