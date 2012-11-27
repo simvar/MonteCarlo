@@ -10,6 +10,10 @@
 using namespace std;
 //------------------------------------
 //------------------------------------
+
+
+
+//------------------------------------
 // Vektoriaus begalines (max) normos funkcijos deklaracija
 double Vector_Max_Norm(double v[], int n);
 
@@ -215,12 +219,17 @@ else for(int i=iii-1;i>iii-6;i--)
   double x_new = elm[1]; // The algorithm starts at x=6
   double eps = 0.01; // step size
   precision = precision/100;
-
 while (abs(x_new - x_old) > precision){
     x_old = x_new;
     x_new = x_old - eps * f_prime(x_old,x_new);
 }
+
 cout<< "Local minimum occurs at "<< x_new<<endl;
+
+cout<<endl;
+	cout << "xMin = (" << mi1<< ", " << mi2<< ")" << endl;
+	cout << "f(xMin) = " << x_new << endl;
+cout<<endl;
 //------------------------------------
 //------------------------------------
 //------------------------------------
@@ -262,6 +271,7 @@ double region[] = {-1.9, 1.9, -1.1, 1.1};
 		break;
 	}
 	cout << "Greiciausio nusileidimo (angl. Steepest Descent) metodu" << endl;
+	cout<<endl;
 	cout << "surastas sprendinys yra:" << endl;
 	cout << "xMin = (" << a[0] << ", " << a[1] << ")" << endl;
 	cout << "f(xMin) = " << fa << endl;
