@@ -84,7 +84,7 @@ double min = skaiciai[0]; // prielaidos maþiausiam elementui ...
 double imin = 0; // ir jo vietai masyve
  double mi1= xx[0][0];
  double mi2= xx[0][1];
- double precision = 0.00001;
+ double precision = 0.0001;
 for( int i = 0; i < 100; i++ ){ // ciklà dabar galima pradëti nuo antrojo elemento
 if( skaiciai[i] > max ) {
 max = skaiciai[i];
@@ -209,7 +209,7 @@ double x_new = elm[1]; // The algorithm starts at x=6
 double eps = 0.01; // step size
 //double precision = 0.00001;
 
-
+precision = precision/100;
 
 while (abs(x_new - x_old) > precision){
     x_old = x_new;
@@ -218,7 +218,13 @@ while (abs(x_new - x_old) > precision){
    // cout<<abs(x_new - x_old) <<" ? "<< precision<<endl;
 }
 cout<< "Local minimum occurs at "<< x_new<<endl;
-   //------------------------------------
+//------------------------------------
+
+
+
+
+
+//------------------------------------
    system("pause");
     return 0;
 }
