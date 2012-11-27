@@ -49,10 +49,6 @@ iteration, int n){
 		return 0;
 }
 
-
-
-
-
 //------------------------------------
 //------------------------------------
 //------------------------------------
@@ -81,26 +77,13 @@ int main()
     double xSprendinys; // Argumento reiksme
     int fSprendinys; // Uzdavinio sprendinys
 
-    // Vektoriu kurimas, kuriu elementai yra atitiktiniai realus skaiciai
-
     double virsutinis_rezis1, apatinis_rezis1,virsutinis_rezis2, apatinis_rezis2; // apsirasome intervalo rezius
-
-/*
-    cout << "Iveskite inervalo apatiny ir virsutiny rezius: ";
-    cin >> apatinis_rezis >> virsutinis_rezis;
-    cout << "Iveskite vektoriaus dimensija (n): ";
-    cin >> n;
- */
-
-
-
-
     apatinis_rezis1=-1.9;
     virsutinis_rezis1=1.9;
     apatinis_rezis2=-1.1;
     virsutinis_rezis2=1.1;
-   double skaiciai[100];
-    double xx[100][2];
+     double skaiciai[100];
+     double xx[100][2];
 
 
 
@@ -123,8 +106,6 @@ for(int j=0;j<100;j++)
     skaiciai[j]=sixhump(&vektorius[0]);
     xx[j][0] = vektorius[0];
     xx[j][1] = vektorius[1];
-    //cout << "Six hump funkcijos reiksme siame taske: " << sixhump(&vektorius[0]) << endl;
-   // system("pause>nul");
 }
 //-------------------------------------------
 // Paieðka
@@ -170,16 +151,7 @@ system("pause");
     double *skaiciai2,*temp, *elm, *temp2;
     skaiciai2=(double*)malloc(sizeof(double));
     elm=(double*)malloc(sizeof(double));
- /*
-  max = skaiciai[0]; // prielaida didþiausiam elementui
- imax = 0; // jei pirmasis elementas toks ir bus – jo vieta yra 0
-  ma1= xx[0][0];
-  ma2= xx[0][1];
- min = skaiciai[0]; // prielaidos maþiausiam elementui ...
- imin = 0; // ir jo vietai masyve
-  mi1= xx[0][0];
-  mi2= xx[0][1];
-  */
+
 int ii=0, iii=0;
 
 
@@ -190,9 +162,7 @@ while (abs(-1.031628453-min)>precision)
         vektorius[0] = rand() * (virsutinis_rezis1 - apatinis_rezis1) / RAND_MAX + apatinis_rezis1;
         vektorius[1] = rand() * (virsutinis_rezis2 - apatinis_rezis2) / RAND_MAX + apatinis_rezis2;
     skaiciai2[ii]=sixhump(&vektorius[0]);
-//cout<<"Minimumas "<<min<<endl;
 
-  //skaiciai2[ii]=skaiciai[ii]; /* put the character into the skaiciai array */
                 temp=(double*)realloc(skaiciai2,(ii+2)*sizeof(double)); /* give the pointer some memory */
                 if ( temp != NULL ) {
                         skaiciai2=temp;
@@ -223,19 +193,7 @@ imin = ii;
 //else{double minn=min;}
 ii++;
 }
-//----------------------------
-/*elm[iii]=skaiciai2[ii];
 
-temp2=(double*)realloc(elm,(iii+2)*sizeof(double));
-                if ( temp2 != NULL ) {
-                        elm=temp2;
-                } else {
-                        free(elm);
-                        printf("Error allocating memory!\n");
-                        return 0;
-                }
-*/
-//-----------------------------
 cout<<"Maziausias elementas yra "<<min<<", jo vieta yra "<<imin+1<<" x["<<imin+1<<"][0]="<<mi1<<" x["<<imin+1<<"][1]="<<mi2<<endl;
 
  int j=1;
@@ -252,22 +210,15 @@ else for(int i=iii-1;i>iii-6;i--)
     j++;
 }
 
-    //vektorius[0] = 0.089842; vektorius[1] = -0.7126546;
-   // cout << "Six hump funkcijos reiksme minimumo taske: " << sixhump(&vektorius[0]) << endl;
-
    //-----------------------------------
   double x_old = elm[0];
-double x_new = elm[1]; // The algorithm starts at x=6
-double eps = 0.01; // step size
-//double precision = 0.00001;
-
-precision = precision/100;
+  double x_new = elm[1]; // The algorithm starts at x=6
+  double eps = 0.01; // step size
+  precision = precision/100;
 
 while (abs(x_new - x_old) > precision){
     x_old = x_new;
     x_new = x_old - eps * f_prime(x_old,x_new);
-   // cout<<f_prime(x_old,x_new)<<endl;
-   // cout<<abs(x_new - x_old) <<" ? "<< precision<<endl;
 }
 cout<< "Local minimum occurs at "<< x_new<<endl;
 //------------------------------------
