@@ -5,9 +5,10 @@
 #include <ctime>
 #include <algorithm>
 #include <vector>
+#include "montecarlo/SixHumpCamelBack.m"
+
 
 //------------------------------------
-
 #define N 2
 using namespace std;
 //------------------------------------
@@ -41,15 +42,21 @@ double GetRandomNumber(double dLow, double dHigh){
 }
 
 // Apskaiciuoja Six-hump Camel Back funkcijos reiksme taske x
+double SixHumpCamelBack(double *x);
+/*
 double SixHumpCamelBack(double *x){
     return (4-2.1*x[0]*x[0]+x[0]*x[0]*x[0]*x[0]/3)*x[0]*x[0] + x[0]*x[1] +
     (-4+4*x[1]*x[1])*x[1]*x[1];
 }
+*/
 // Apskaiciuoja Six-hump Camel Back gradiento reiksme taske x
+
 void SixHumpCamelBackGradient(double *x, double *fGrad){
     fGrad[0] = 8*x[0]-8.4*x[0]*x[0]*x[0]+2*x[0]*x[0]*x[0]*x[0]*x[0]+x[1];
     fGrad[1] = x[0]-8*x[1]+16*x[1]*x[1]*x[1];
 }
+
+
 // Algoritmo sustojimo salyga kontroliuojanti funkcija
 int StoppingRule(double* a, double fa, double* x, double fx, double* dfa, int
 iteration, int n){
@@ -65,6 +72,7 @@ iteration, int n){
 }
 //--------------------------
 //--------------------------
+/*
  void SixHumpCamelBackk(double *x, double *y)
  {
 
@@ -77,6 +85,7 @@ iteration, int n){
  {
 
  }
+ */
 //------------------------------------
 //------------------------------------
 //------------------------------------
@@ -96,6 +105,7 @@ double f_prime(double x_old,double x_new){
 
 int main()
 {
+
     srand(time(0));
     cout << "Monte Carlo realizacijos pradzia" << endl;
     cout << "(RANDOM SEARCH METHOD)" << endl;
@@ -334,6 +344,7 @@ int main()
 //------------------------------------
 //------------------------------------
 //------------------------------------
+/*
 	 err = Newton_Raphson_ndim( SixHumpCamelBackk, SixHumpCamelBackGradientt, StoppingRulee, a, &fa, N);
 	switch (err)
 	{
@@ -364,7 +375,7 @@ int main()
 	cout << "xMin = (" << a[0] << ", " << a[1] << ")" << endl;
 	cout << "f(xMin) = " << fa << endl;
 
-
+*/
 
 
 
