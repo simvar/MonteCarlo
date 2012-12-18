@@ -32,7 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="SixHumpCamel.cpp" />
+		<Unit filename="SixHumpCamel.h" />
 		<Unit filename="SixHumpCamelBack.m" />
+		<Unit filename="SixHumpCamel_initialize.cpp" />
+		<Unit filename="SixHumpCamel_initialize.h" />
+		<Unit filename="SixHumpCamel_terminate.cpp" />
+		<Unit filename="SixHumpCamel_terminate.h" />
+		<Unit filename="SixHumpCamel_types.h" />
 		<Unit filename="copy_vector.cpp" />
 		<Unit filename="gauss_elimination.cpp" />
 		<Unit filename="main.cpp" />
@@ -41,6 +48,13 @@
 		<Unit filename="minimize_down_the_line.cpp" />
 		<Unit filename="newton_raphson_ndim.cpp" />
 		<Unit filename="ray_in_n_space.cpp" />
+		<Unit filename="rtGetInf.cpp" />
+		<Unit filename="rtGetInf.h" />
+		<Unit filename="rtGetNaN.cpp" />
+		<Unit filename="rtGetNaN.h" />
+		<Unit filename="rt_nonfinite.cpp" />
+		<Unit filename="rt_nonfinite.h" />
+		<Unit filename="rtwtypes.h" />
 		<Unit filename="steepest_descent.cpp" />
 		<Unit filename="subtract_vectors.cpp" />
 		<Unit filename="vector_max_norm.cpp" />
