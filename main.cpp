@@ -5,7 +5,8 @@
 #include <ctime>
 #include <algorithm>
 #include <vector>
-#include "montecarlo/SixHumpCamelBack.m"
+#include "SixHumpCamel.h"
+
 
 
 //------------------------------------
@@ -42,7 +43,7 @@ double GetRandomNumber(double dLow, double dHigh){
 }
 
 // Apskaiciuoja Six-hump Camel Back funkcijos reiksme taske x
-double SixHumpCamelBack(double *x);
+//double SixHumpCamelBack(double *x);
 /*
 double SixHumpCamelBack(double *x){
     return (4-2.1*x[0]*x[0]+x[0]*x[0]*x[0]*x[0]/3)*x[0]*x[0] + x[0]*x[1] +
@@ -298,12 +299,12 @@ int main()
 	for(int i = 0; i < N; ++i){
         a[i] = GetRandomNumber(region[2*i], region[2*i+1]);
     }*/
-	double fa = SixHumpCamelBack(a); // Funkcijos reiksme pradiniame taske a
+	double fa = SixHumpCamel(a); // Funkcijos reiksme pradiniame taske a
 	double dfa[N];
 	SixHumpCamelBackGradient(a, dfa); // Funkcijos gradiento reiksme taske a
 	double cutoff = 1.0, cutoff_scale_factor = 1.0; // Pap. parametrai
 	double tolerance = 0.01;
-	int err = Steepest_Descent( SixHumpCamelBack, SixHumpCamelBackGradient, StoppingRule,
+	int err = Steepest_Descent( SixHumpCamel, SixHumpCamelBackGradient, StoppingRule,
     a, &fa, dfa, cutoff, cutoff_scale_factor, tolerance, N);
 	switch (err)
 	{
@@ -328,6 +329,7 @@ int main()
 			cout << "Exceed maximal number of iterations." << endl;
 		break;
 	}
+
 	cout << "Greiciausio nusileidimo (angl. Steepest Descent) metodu" << endl;
 	cout<<endl;
 	cout << "surastas sprendinys yra:" << endl;

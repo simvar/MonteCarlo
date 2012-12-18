@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="SixHumpCamelBack.m" />
 		<Unit filename="copy_vector.cpp" />
 		<Unit filename="gauss_elimination.cpp" />
 		<Unit filename="main.cpp" />
